@@ -1,3 +1,58 @@
-.ancestor, .child { 
-    background-color: #000;
+.navbar {
+    display: flex
+}
+
+.navbar .logo {
+    color: #F9FAF8;
+    font-size: 24px;
+}
+
+.navbar .header-link {
+    color: #E5E7EB;
+    font-size: 18px;
+    display: flex;
+}
+
+.logo, .header-link {
+    border: 4px solid brown;
+    flex: 1;
+}
+
+.link {
+    justify-content: space-between;
+    border: 4px solid brown;
+}
+
+.navbar, .header {
+    background-color: #1F2937;
+}
+
+/*  header */
+.header {
+    display: flex;
+}
+
+.hero-main, .image {
+    flex: 1;
+    border: 4px solid brown;
+}
+
+.hero-main h1 {
+    font-size: 48px;
+    font-weight: extra-bold;
+    color: #F9FAF8;
+}
+.hero-main p { 
+    color: #E5E7EB;
+    font-size: 18px;
+}
+.signup {
+    background-color: #3882F6;
+    border-radius: 10px;
+    width: 100px;
+    padding: 20px;   
+}
+
+.image p {
+    text-align: center;
 }
