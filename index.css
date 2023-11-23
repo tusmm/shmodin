@@ -67,10 +67,12 @@ body {
     align-items: center;
 }
 .image p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     width: 400px;
     background-color: grey;
-    text-align: center;
 }
 
 /* random-info */
