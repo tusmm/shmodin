@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    background-color: rgb(101, 116, 201);
+}
+
+.scores {
+    font-size: 20px;
+    color: rgba(247, 230, 230, 0.952);
+}
+
+.status {
+    font-size: 20px;
+    color: rgba(247, 230, 230, 0.952);
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    font-size: 36px;
+    color: rgba(247, 230, 230, 0.952);
+    text-align: center;
+}

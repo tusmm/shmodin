@@ -46,13 +46,7 @@ let cpuScore = 0
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', function () {
     let point = playRound('rock', getComputerChoice())
-    if (point == 0) {
-        console.log("No points")
-    } else if (point == 1) {
-        playerScore += 1
-    } else if (point == 2) {
-        cpuScore += 1
-    }
+    pointCalculation(point)
     scores()
     resetResult()
     checkEnd()
@@ -60,13 +54,7 @@ rockBtn.addEventListener('click', function () {
 const paperBtn = document.querySelector('#paper');
 paperBtn.addEventListener('click', function () {
     let point = playRound('paper', getComputerChoice())
-    if (point == 0) {
-        console.log("No points")
-    } else if (point == 1) {
-        playerScore += 1
-    } else if (point == 2) {
-        cpuScore += 1
-    }
+    pointCalculation(point)
     scores()
     resetResult()
     checkEnd()
@@ -74,13 +62,7 @@ paperBtn.addEventListener('click', function () {
 const scissorsBtn = document.querySelector('#scissors');
 scissorsBtn.addEventListener('click', function () {
     let point = playRound('scissors', getComputerChoice())
-    if (point == 0) {
-        console.log("No points")
-    } else if (point == 1) {
-        playerScore += 1
-    } else if (point == 2) {
-        cpuScore += 1
-    }
+    pointCalculation(point)
     scores()
     resetResult()
     checkEnd()
@@ -110,4 +92,31 @@ function scores() {
 function resetResult() {
     const draw = document.querySelector("#result")
     draw.textContent = ""
+}
+
+function onDraw() {
+    const win = document.querySelector("#status")
+    win.textContent = "Draw!"
+}
+
+function onPlayerWin() {
+    const win = document.querySelector("#status")
+    win.textContent = "Player round win!"
+}
+
+function onCpuWin() {
+    const win = document.querySelector("#status")
+    win.textContent = "CPU round win!"
+}
+
+function pointCalculation(point) {
+    if (point == 0) {
+        onDraw()
+    } else if (point == 1) {
+        onPlayerWin()
+        playerScore += 1
+    } else if (point == 2) {
+        onCpuWin()
+        cpuScore += 1
+    }
 }
