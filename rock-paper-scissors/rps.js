@@ -14,35 +14,26 @@ function playRound(playerSelection, computerSelection) {
     let playersChoice = playerSelection.toLowerCase()
     if (playersChoice == "rock") {
         if (computerSelection == "rock") {
-            console.log("Draw!")
             return 0
         } else if (computerSelection == "scissors") {
-            console.log("You win!")
             return 1
         } else {
-            console.log("Computer wins!")
             return 2
         }
     } else if (playersChoice == "paper") {
         if (computerSelection == "paper") {
-            console.log("Draw!")
             return 0
         } else if (computerSelection == "rock") {
-            console.log("You win!")
             return 1
         } else {
-            console.log("Computer wins!")
             return 2
         }
     } else if (playersChoice == "scissors") {
         if (computerSelection == "scissors") {
-            console.log("Draw!")
             return 0
         } else if (computerSelection == "paper") {
-            console.log("You win!")
             return 1
         } else {
-            console.log("Computer wins!")
             return 2
         }
     }
@@ -50,25 +41,73 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game() {
-    let playerScore = 0
-    let cpuScore = 0
-
-    let rounds = 5
-    for (let i = 0; i < rounds; i++) {
-        const playerSelection = prompt("Please enter rock, paper, or scissors: ");
-        const computerSelection = getComputerChoice();
-        let point = playRound(playerSelection, computerSelection)
-        if (point == 0) {
-            console.log("No points")
-        } else if (point == 1) {
-            playerScore += 1
-        } else if (point == 2) {
-            cpuScore += 1
-        }
+let playerScore = 0
+let cpuScore = 0
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener('click', function () {
+    let point = playRound('rock', getComputerChoice())
+    if (point == 0) {
+        console.log("No points")
+    } else if (point == 1) {
+        playerScore += 1
+    } else if (point == 2) {
+        cpuScore += 1
     }
-    console.log("Player score: " + playerScore)
-    console.log("Computer score: " + cpuScore)
+    scores()
+    resetResult()
+    checkEnd()
+})
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener('click', function () {
+    let point = playRound('paper', getComputerChoice())
+    if (point == 0) {
+        console.log("No points")
+    } else if (point == 1) {
+        playerScore += 1
+    } else if (point == 2) {
+        cpuScore += 1
+    }
+    scores()
+    resetResult()
+    checkEnd()
+})
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener('click', function () {
+    let point = playRound('scissors', getComputerChoice())
+    if (point == 0) {
+        console.log("No points")
+    } else if (point == 1) {
+        playerScore += 1
+    } else if (point == 2) {
+        cpuScore += 1
+    }
+    scores()
+    resetResult()
+    checkEnd()
+})
+
+function checkEnd() {
+    if (playerScore == 5) {
+        const draw = document.querySelector("#result")
+        draw.textContent = "You win!"
+        playerScore = 0
+        cpuScore = 0
+    } else if (cpuScore == 5) {
+        const draw = document.querySelector("#result")
+        draw.textContent = "Computer Wins!"
+        playerScore = 0
+        cpuScore = 0
+    }
 }
 
-game()
+function scores() {
+    const updatePlayer = document.querySelector("#player-score")
+    updatePlayer.textContent = "Player Score: " + playerScore
+    const updateCPU = document.querySelector("#cpu-score")
+    updateCPU.textContent = "CPU Score: " + cpuScore
+}
+
+function resetResult() {
+    const draw = document.querySelector("#result")
+    draw.textContent = ""
+}
