@@ -27,6 +27,7 @@ null === +"\n0\n" → false
 ![[Pasted image 20231123140414.png]]
 Relational operators^^^
 
+---
 ### Developer tools
 inspect, 
 create breakpoints,
@@ -65,7 +66,7 @@ const doubled = originals.map(item => item * 2);
 
 console.log(doubled); // [2, 4, 6]
 ```
-
+---
 ### JS Execution
 Two phases: Memory Allocation phase and Code Creation Phase
 Variables are first all initialized to `undefined` in memory and functions have all the code copied over.
@@ -150,6 +151,7 @@ Step 2.1. Initialize the 2 to n, then when we see a function, load the function 
 | square2: 4      |      |
 | square4: 16     |      |
 
+---
 ### FizzBuzz
 
 ```javascript
@@ -168,6 +170,7 @@ for (let i = 1; i <= answer; i++) {
 }
 ```
 
+---
 ### DOM Manipulation and Events
 DOM is the Document Object Model which is a tree like representation of the contents of the webpage. 
 
@@ -274,6 +277,7 @@ You can link the JavaScript file in the `<head>` of your HTML document. Use th
 </head>
 ```
 
+---
 ### Events
 You can specify function attributes directly on your HTML elements, you can set properties of form `on[eventType]` (`onclick`, `onmousedown`, etc.) on the DOM nodes in your JavaScript, or you can attach event listeners to the DOM nodes in your JavaScript. Event listeners are definitely the preferred method
 ```html
