@@ -9,7 +9,7 @@ function createBox(sideLength) {
     newDiv.style.height = `${size}px`
 
     newDiv.addEventListener("mouseover", function() {
-        newDiv.style.backgroundColor = "lightgreen";
+        newDiv.style.backgroundColor = getRandomColor();
     });
 
     return newDiv
@@ -33,6 +33,15 @@ function createGrid(sideLength) {
             container.appendChild(div)
         }
     }
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 const userPrompt = document.querySelector("#user-prompt")
