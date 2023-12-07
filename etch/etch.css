@@ -1,0 +1,15 @@
+.grid {
+    width: 960px;
+    height: 960px;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.etch-box {
+    border: 2px solid red; /* Set border color and style */
+    border-width: 0; /* Set border width to 0 */
+    background-color: lightblue;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
