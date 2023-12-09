@@ -128,3 +128,28 @@ Object keys are ordered if integers, however, non integer properties are listed 
 https://www.youtube.com/watch?v=HB1ZC7czKRs
 https://javascript.info/array-methods
 
+```js
+let arr = ["I", "go", "home"];
+
+  
+
+delete arr[1]; // remove "go"
+
+  
+
+alert( arr[1] ); // undefined
+
+
+// now arr = ["I",  , "home"];
+alert( arr.length ); // 3
+```
+Behavior of deleting an element from an array^
+
+```js
+let arr = ["I", "study", "JavaScript"];
+
+arr.splice(1, 1); // from index 1 remove 1 element
+
+alert( arr ); // ["I", "JavaScript"]
+```
+[`splice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) will return a more expected behavior of modifying the array as well
